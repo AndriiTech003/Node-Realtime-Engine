@@ -1,0 +1,92 @@
+{
+  "scenario": "idle",
+  "label": "fd-limit-demo",
+  "at": "2026-10-01T10:08:02.694Z",
+  "environment": {
+    "cpus": 8,
+    "cpuModel": "Apple M1",
+    "memoryGb": 8,
+    "node": "v26.7.0",
+    "platform": "darwin"
+  },
+  "options": {
+    "scenario": "idle",
+    "label": "fd-limit-demo",
+    "out": "results",
+    "via": "direct",
+    "nodes": [
+      "http://127.0.0.1:4301",
+      "http://127.0.0.1:4302",
+      "http://127.0.0.1:4303"
+    ],
+    "haproxy": "http://127.0.0.1:4300",
+    "workers": 4,
+    "codec": "json",
+    "deflate": false,
+    "jitter": true,
+    "connections": 10500,
+    "rooms": 0,
+    "duration": 5,
+    "warmup": 5,
+    "rate": 5,
+    "payload": 0,
+    "slowPercent": 0,
+    "cursorHz": 0,
+    "probes": 0,
+    "steps": 1,
+    "subscribe": "user",
+    "killCmd": "node scripts/cluster.mjs kill 2",
+    "restartCmd": "node scripts/cluster.mjs start-node 2",
+    "connectRate": 1000,
+    "ticketConcurrency": 128,
+    "backoffBaseMs": 1000,
+    "backoffMaxMs": 30000
+  },
+  "result": {
+    "connections": 10204,
+    "connectErrors": 4250,
+    "connectSeconds": 126.2,
+    "connectLatencyMs": {
+      "count": 10204,
+      "p50": 20.47,
+      "p95": 207.63,
+      "p99": 407.09,
+      "max": 741.7,
+      "mean": 53.62
+    },
+    "steps": [
+      {
+        "connections": 10204,
+        "heapMb": -33.8,
+        "rssMb": -226.3,
+        "heapPerConnKb": -3.39,
+        "rssPerConnKb": -22.71,
+        "seconds": 120.7
+      }
+    ],
+    "heapPerConnKb": -3.39,
+    "rssPerConnKb": -22.71,
+    "heapPerConnSlopeKb": null,
+    "idleCpuPercentPerNode": 0,
+    "nodeHeapMbTotal": 0,
+    "nodeRssMbTotal": 0,
+    "server": {
+      "nodes": 0,
+      "msgsOutPerSec": 0,
+      "msgsOutByKindPerSec": {},
+      "msgsInPerSec": 0,
+      "eventLoopP99MsMax": 0,
+      "eluAvg": 0,
+      "cpuPercentAvg": 0,
+      "heapMbMax": 0,
+      "rssMbMax": 0,
+      "fanoutP50Ms": 0,
+      "fanoutP99Ms": 0,
+      "slowConsumerDisconnects": 0,
+      "ephemeralDropped": 0,
+      "upgradesOk": 0,
+      "connections": 0,
+      "resumeMessages": 0
+    }
+  }
+}

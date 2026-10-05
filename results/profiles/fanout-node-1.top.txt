@@ -1,0 +1,47 @@
+profile results/profiles/fanout-node-1.cpuprofile
+wall 52843.8 ms, idle 49159.1 ms (93.0 %), busy 3684.7 ms
+
+self time by category (% of busy)
+  37.1 %     1367.8 ms  native / builtins
+  25.5 %      939.4 ms  node core (JS)
+   9.6 %      354.1 ms  program (native, not attributed)
+   7.8 %      288.6 ms  ws
+   6.9 %      254.0 ms  engine (packages/server)
+   4.7 %      172.0 ms  ioredis
+   3.8 %      140.3 ms  gc
+   3.7 %      135.7 ms  prom-client
+   0.7 %       24.3 ms  protocol
+   0.1 %        5.0 ms  other
+   0.1 %        3.7 ms  pino
+
+top 30 functions by self time (% of busy)
+  32.1 %     1182.6 ms  writev 
+   9.6 %      354.1 ms  (program) 
+   3.8 %      140.3 ms  (garbage collector) 
+   3.0 %      111.4 ms  send ws/lib/sender.js:351
+   2.1 %       75.8 ms  send ws/lib/websocket.js:468
+   1.9 %       69.9 ms  listOnTimeout node:internal/timers:623
+   1.7 %       64.2 ms  createWriteWrap node:internal/stream_base_commons:108
+   1.7 %       63.7 ms  writeUtf8String 
+   1.7 %       61.6 ms  setValue prom-client/lib/counter.js:138
+   1.6 %       60.4 ms  processTimers node:internal/timers:603
+   1.6 %       57.9 ms  nextTick node:internal/process/task_queues:113
+   1.4 %       50.3 ms  Socket._writeGeneric node:net:1227
+   1.1 %       39.4 ms  readFileUtf8 
+   1.1 %       39.1 ms  writevGeneric node:internal/stream_base_commons:121
+   1.0 %       36.3 ms  compileForInternalLoader node:internal/bootstrap/realm:392
+   0.9 %       32.1 ms  clearBuffer node:internal/streams/writable:746
+   0.8 %       30.4 ms  deliver packages/server/dist/channels.js:107
+   0.8 %       30.1 ms  onwrite node:internal/streams/writable:617
+   0.7 %       27.0 ms  frame ws/lib/sender.js:79
+   0.6 %       23.6 ms  _write ws/lib/receiver.js:96
+   0.6 %       21.9 ms  sendBytes packages/server/dist/connection.js:83
+   0.5 %       19.9 ms  Command ioredis/built/Command.js:37
+   0.5 %       19.7 ms  afterWriteDispatched node:internal/stream_base_commons:154
+   0.5 %       19.1 ms  writeOrBuffer node:internal/streams/writable:550
+   0.5 %       18.9 ms  (anonymous) packages/server/dist/server.js:132
+   0.5 %       18.7 ms  heartbeatTick packages/server/dist/server.js:179
+   0.5 %       16.9 ms  transformReply ioredis/built/Command.js:177
+   0.5 %       16.7 ms  toArg ioredis/built/utils/index.js:165
+   0.4 %       16.1 ms  sendCommand ioredis/built/Redis.js:338
+   0.4 %       15.7 ms  runMicrotasks 

@@ -1,0 +1,24 @@
+{
+  "name": "@ashamrai/pulse-rooms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pulse Rooms: chat, presence, live cursors and a network lab on top of the realtime engine",
+  "scripts": {
+    "dev": "vite --port 4320 --strictPort",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "preview": "vite preview --port 4321 --strictPort",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@ashamrai/realtime-client": "workspace:*",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite": "^7.1.0"
+  }
+}

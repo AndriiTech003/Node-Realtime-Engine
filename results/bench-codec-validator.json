@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-01T09:22:23.896Z",
+  "node": "v26.7.0",
+  "iterations": 200000,
+  "codec": [
+    {
+      "frame": "chat",
+      "jsonBytes": 216,
+      "msgpackBytes": 180,
+      "jsonDeflateBytes": 165,
+      "jsonEncodeOpsPerSec": 3217730,
+      "msgpackEncodeOpsPerSec": 1753416,
+      "jsonDecodeOpsPerSec": 1422353,
+      "msgpackDecodeOpsPerSec": 1438485
+    },
+    {
+      "frame": "cursor",
+      "jsonBytes": 89,
+      "msgpackBytes": 74,
+      "jsonDeflateBytes": 76,
+      "jsonEncodeOpsPerSec": 5055000,
+      "msgpackEncodeOpsPerSec": 3458654,
+      "jsonDecodeOpsPerSec": 1798843,
+      "msgpackDecodeOpsPerSec": 3646073
+    },
+    {
+      "frame": "presence",
+      "jsonBytes": 86,
+      "msgpackBytes": 67,
+      "jsonDeflateBytes": 74,
+      "jsonEncodeOpsPerSec": 5695531,
+      "msgpackEncodeOpsPerSec": 2999484,
+      "jsonDecodeOpsPerSec": 1819125,
+      "msgpackDecodeOpsPerSec": 3817255
+    },
+    {
+      "frame": "big",
+      "jsonBytes": 2914,
+      "msgpackBytes": 2154,
+      "jsonDeflateBytes": 486,
+      "jsonEncodeOpsPerSec": 204133,
+      "msgpackEncodeOpsPerSec": 85817,
+      "jsonDecodeOpsPerSec": 67867,
+      "msgpackDecodeOpsPerSec": 69883
+    }
+  ],
+  "validator": [
+    {
+      "frame": "pub",
+      "ownValidatorOpsPerSec": 4725633,
+      "zodOpsPerSec": 765683,
+      "speedup": 6.2
+    },
+    {
+      "frame": "eph",
+      "ownValidatorOpsPerSec": 7382106,
+      "zodOpsPerSec": 836670,
+      "speedup": 8.8
+    },
+    {
+      "frame": "sub",
+      "ownValidatorOpsPerSec": 5168537,
+      "zodOpsPerSec": 2719021,
+      "speedup": 1.9
+    }
+  ]
+}

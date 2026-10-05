@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-01T09:22:12.701Z",
+  "node": "v26.7.0",
+  "results": [
+    {
+      "codec": "json",
+      "subscribers": 10000,
+      "perSubscriber": {
+        "p50Ms": 7.795,
+        "p99Ms": 8.558,
+        "cpuMsPerMessage": 7.953,
+        "allocatedMbDuringRun": 0.9
+      },
+      "serializeOnce": {
+        "p50Ms": 0.009,
+        "p99Ms": 0.266,
+        "cpuMsPerMessage": 0.029,
+        "allocatedMbDuringRun": 0.1
+      },
+      "speedup": 866.1
+    },
+    {
+      "codec": "msgpack",
+      "subscribers": 10000,
+      "perSubscriber": {
+        "p50Ms": 10.014,
+        "p99Ms": 11.142,
+        "cpuMsPerMessage": 10.212,
+        "allocatedMbDuringRun": 1.6
+      },
+      "serializeOnce": {
+        "p50Ms": 0.01,
+        "p99Ms": 0.132,
+        "cpuMsPerMessage": 0.044,
+        "allocatedMbDuringRun": 0.1
+      },
+      "speedup": 1001.4
+    }
+  ]
+}

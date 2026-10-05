@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-01T09:22:08.626Z",
+  "node": "v26.7.0",
+  "results": [
+    {
+      "mode": "engine",
+      "connections": 4000,
+      "heapPerConnKb": 5.07,
+      "rssPerConnKb": 15.51,
+      "externalPerConnKb": 0.02,
+      "connectMs": 963,
+      "idleCpuMsPerSec": 25.1,
+      "holdSeconds": 20
+    },
+    {
+      "mode": "engine-per-connection-timers",
+      "connections": 4000,
+      "heapPerConnKb": 6.19,
+      "rssPerConnKb": 17.97,
+      "externalPerConnKb": 0.02,
+      "connectMs": 900,
+      "idleCpuMsPerSec": 130.54,
+      "holdSeconds": 20
+    }
+  ]
+}

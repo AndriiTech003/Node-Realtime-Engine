@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "types": [],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "customConditions": [
+      "source"
+    ],
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ashamrai/realtime-protocol": [
+        "../protocol/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src"
+  ]
+}

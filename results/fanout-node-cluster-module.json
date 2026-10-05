@@ -1,0 +1,93 @@
+{
+  "scenario": "fanout-big-room",
+  "label": "fanout-node-cluster-module",
+  "at": "2026-10-04T23:01:48.897Z",
+  "environment": {
+    "cpus": 8,
+    "cpuModel": "Apple M1",
+    "memoryGb": 8,
+    "node": "v26.7.0",
+    "platform": "darwin"
+  },
+  "options": {
+    "scenario": "fanout-big-room",
+    "label": "fanout-node-cluster-module",
+    "out": "results",
+    "via": "direct",
+    "nodes": [
+      "http://127.0.0.1:4301"
+    ],
+    "haproxy": "http://127.0.0.1:4300",
+    "workers": 4,
+    "codec": "json",
+    "deflate": false,
+    "jitter": true,
+    "connections": 3000,
+    "rooms": 0,
+    "duration": 30,
+    "warmup": 5,
+    "rate": 5,
+    "payload": 0,
+    "slowPercent": 0,
+    "cursorHz": 0,
+    "probes": 0,
+    "steps": 3,
+    "subscribe": "user",
+    "killCmd": "node scripts/cluster.mjs kill 2",
+    "restartCmd": "node scripts/cluster.mjs start-node 2",
+    "connectRate": 1000,
+    "ticketConcurrency": 128,
+    "backoffBaseMs": 1000,
+    "backoffMaxMs": 30000
+  },
+  "result": {
+    "connections": 3001,
+    "connectSeconds": 3,
+    "seconds": 30.2,
+    "latencyMs": {
+      "big-room": {
+        "count": 456000,
+        "p50": 14.91,
+        "p95": 75.63,
+        "p99": 129.09,
+        "max": 215.51,
+        "mean": 22.53
+      }
+    },
+    "clientMsgsInPerSec": 15110,
+    "clientEphInPerSec": 0,
+    "publishedPerSec": 5,
+    "gaps": 0,
+    "duplicates": 0,
+    "resets": 0,
+    "resumedMessages": 0,
+    "reconnects": 0,
+    "closeCodes": {},
+    "publishErrors": 0,
+    "loadgenRssMb": 139,
+    "server": {
+      "nodes": 1,
+      "msgsOutPerSec": 5018,
+      "msgsOutByKindPerSec": {
+        "durable": 5018,
+        "ephemeral": 0,
+        "presence": 0,
+        "control": 0,
+        "history": 0
+      },
+      "msgsInPerSec": 0,
+      "eventLoopP99MsMax": 147.02,
+      "eluAvg": 0.164,
+      "cpuPercentAvg": 5.8,
+      "heapMbMax": 48.6,
+      "rssMbMax": 54.8,
+      "fanoutP50Ms": 20.365,
+      "fanoutP99Ms": 212.25,
+      "slowConsumerDisconnects": 0,
+      "ephemeralDropped": 0,
+      "upgradesOk": 4,
+      "connections": 1001,
+      "resumeMessages": 0
+    }
+  }
+}

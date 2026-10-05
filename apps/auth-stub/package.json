@@ -1,0 +1,15 @@
+{
+  "name": "@ashamrai/realtime-auth-stub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Demo identity provider: issues JWTs and exchanges them for realtime tickets",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/main.js"
+  },
+  "devDependencies": {
+    "@ashamrai/realtime-server": "workspace:*"
+  }
+}

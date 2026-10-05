@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-01T09:22:25.012Z",
+  "publishers": 8,
+  "perPublisher": 500,
+  "results": [
+    {
+      "mode": "separate-commands",
+      "published": 4000,
+      "receivedOverPubSub": 4000,
+      "outOfOrderDeliveries": 1205,
+      "streamEntries": 3007,
+      "xaddRejected": 993,
+      "publishesPerSec": 19581
+    },
+    {
+      "mode": "lua",
+      "published": 4000,
+      "receivedOverPubSub": 4000,
+      "outOfOrderDeliveries": 0,
+      "streamEntries": 4000,
+      "xaddRejected": 0,
+      "publishesPerSec": 38018
+    }
+  ]
+}

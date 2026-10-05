@@ -1,0 +1,113 @@
+{
+  "scenario": "idle",
+  "label": "idle",
+  "at": "2026-10-01T09:24:13.575Z",
+  "environment": {
+    "cpus": 8,
+    "cpuModel": "Apple M1",
+    "memoryGb": 8,
+    "node": "v26.7.0",
+    "platform": "darwin"
+  },
+  "options": {
+    "scenario": "idle",
+    "label": "idle",
+    "out": "results",
+    "via": "direct",
+    "nodes": [
+      "http://127.0.0.1:4301",
+      "http://127.0.0.1:4302",
+      "http://127.0.0.1:4303"
+    ],
+    "haproxy": "http://127.0.0.1:4300",
+    "workers": 4,
+    "codec": "json",
+    "deflate": false,
+    "jitter": true,
+    "connections": 9000,
+    "rooms": 0,
+    "duration": 60,
+    "warmup": 5,
+    "rate": 5,
+    "payload": 0,
+    "slowPercent": 0,
+    "cursorHz": 0,
+    "probes": 0,
+    "steps": 3,
+    "subscribe": "user",
+    "killCmd": "node scripts/cluster.mjs kill 2",
+    "restartCmd": "node scripts/cluster.mjs start-node 2",
+    "connectRate": 1000,
+    "backoffBaseMs": 1000,
+    "backoffMaxMs": 30000
+  },
+  "result": {
+    "connections": 9000,
+    "connectErrors": 0,
+    "connectSeconds": 33.7,
+    "connectLatencyMs": {
+      "count": 9000,
+      "p50": 2.27,
+      "p95": 4.73,
+      "p99": 10.65,
+      "max": 70.2,
+      "mean": 2.71
+    },
+    "steps": [
+      {
+        "connections": 3000,
+        "heapMb": 22.4,
+        "rssMb": 65,
+        "heapPerConnKb": 7.66,
+        "rssPerConnKb": 22.18,
+        "seconds": 3.2
+      },
+      {
+        "connections": 6000,
+        "heapMb": 36,
+        "rssMb": 40.9,
+        "heapPerConnKb": 6.15,
+        "rssPerConnKb": 6.99,
+        "seconds": 3.2
+      },
+      {
+        "connections": 9000,
+        "heapMb": 54.5,
+        "rssMb": 61.5,
+        "heapPerConnKb": 6.2,
+        "rssPerConnKb": 6.99,
+        "seconds": 3.2
+      }
+    ],
+    "heapPerConnKb": 6.2,
+    "rssPerConnKb": 6.99,
+    "heapPerConnSlopeKb": 5.48,
+    "idleCpuPercentPerNode": 1.22,
+    "nodeHeapMbTotal": 93.2,
+    "nodeRssMbTotal": 244.6,
+    "server": {
+      "nodes": 3,
+      "msgsOutPerSec": 0,
+      "msgsOutByKindPerSec": {
+        "durable": 0,
+        "ephemeral": 0,
+        "presence": 0,
+        "control": 0,
+        "history": 0
+      },
+      "msgsInPerSec": 0,
+      "eventLoopP99MsMax": 22.95,
+      "eluAvg": 0.017,
+      "cpuPercentAvg": 1.2,
+      "heapMbMax": 31.7,
+      "rssMbMax": 98.8,
+      "fanoutP50Ms": 0,
+      "fanoutP99Ms": 0,
+      "slowConsumerDisconnects": 0,
+      "ephemeralDropped": 0,
+      "upgradesOk": 0,
+      "connections": 9000,
+      "resumeMessages": 0
+    }
+  }
+}

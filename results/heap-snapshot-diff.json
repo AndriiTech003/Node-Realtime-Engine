@@ -1,0 +1,435 @@
+{
+  "at": "2026-10-04T22:45:58.031Z",
+  "node": "v26.7.0",
+  "connections": 2000,
+  "openOnServer": 2000,
+  "perConnection": "room:{20 users} with presence + user:{uid} + one pub each",
+  "closePaths": {
+    "firstCycle": "client close handshake",
+    "secondCycle": "client terminate (no close frame)"
+  },
+  "totals": {
+    "baselineKb": 17250.8,
+    "openKb": 31618.9,
+    "closedKb": 17699.1,
+    "secondCycleClosedKb": 16721.7,
+    "heapUsedMb": [
+      11.8,
+      24.8,
+      12.3,
+      11.3
+    ],
+    "nodes": [
+      141031,
+      352479,
+      141188,
+      128941
+    ]
+  },
+  "perConnectionBytes": 7356,
+  "leftoverAfterCloseKb": 448.3,
+  "growthSecondCycleKb": -977.4,
+  "watched": {
+    "baseline": {
+      "Connection": 0,
+      "WebSocket": 1,
+      "Socket": 56,
+      "Sender": 0,
+      "Receiver": 0,
+      "TokenBucket": 0,
+      "ViolationCounter": 0,
+      "TCP": 54,
+      "WriteWrap": 1,
+      "Timeout": 60
+    },
+    "open": {
+      "Connection": 2000,
+      "WebSocket": 2001,
+      "Socket": 2056,
+      "Sender": 2000,
+      "Receiver": 2000,
+      "TokenBucket": 6000,
+      "ViolationCounter": 2000,
+      "TCP": 2054,
+      "WriteWrap": 1,
+      "Timeout": 61
+    },
+    "closed": {
+      "Connection": 0,
+      "WebSocket": 1,
+      "Socket": 7,
+      "Sender": 0,
+      "Receiver": 0,
+      "TokenBucket": 0,
+      "ViolationCounter": 0,
+      "TCP": 5,
+      "WriteWrap": 1,
+      "Timeout": 11
+    },
+    "secondCycleClosed": {
+      "Connection": 0,
+      "WebSocket": 1,
+      "Socket": 7,
+      "Sender": 0,
+      "Receiver": 0,
+      "TokenBucket": 0,
+      "ViolationCounter": 0,
+      "TCP": 5,
+      "WriteWrap": 1,
+      "Timeout": 11
+    }
+  },
+  "growthOpen": [
+    {
+      "class": "(array)",
+      "countDelta": 16100,
+      "sizeDelta": 2301992
+    },
+    {
+      "class": "Object",
+      "countDelta": 26116,
+      "sizeDelta": 1687936
+    },
+    {
+      "class": "(native)",
+      "countDelta": 4001,
+      "sizeDelta": 1109616
+    },
+    {
+      "class": "()",
+      "countDelta": 16000,
+      "sizeDelta": 896000
+    },
+    {
+      "class": "Array",
+      "countDelta": 26099,
+      "sizeDelta": 835168
+    },
+    {
+      "class": "(hidden)",
+      "countDelta": 16819,
+      "sizeDelta": 818248
+    },
+    {
+      "class": "(string)",
+      "countDelta": 20313,
+      "sizeDelta": 740416
+    },
+    {
+      "class": "Socket",
+      "countDelta": 2000,
+      "sizeDelta": 656000
+    },
+    {
+      "class": "system / Context",
+      "countDelta": 10000,
+      "sizeDelta": 544000
+    },
+    {
+      "class": "Receiver",
+      "countDelta": 2000,
+      "sizeDelta": 544000
+    },
+    {
+      "class": "(code)",
+      "countDelta": 1754,
+      "sizeDelta": 528672
+    },
+    {
+      "class": "Connection",
+      "countDelta": 2000,
+      "sizeDelta": 480000
+    },
+    {
+      "class": "WritableState",
+      "countDelta": 4000,
+      "sizeDelta": 416000
+    },
+    {
+      "class": "WebSocket",
+      "countDelta": 2000,
+      "sizeDelta": 400000
+    },
+    {
+      "class": "TokenBucket",
+      "countDelta": 6000,
+      "sizeDelta": 336000
+    }
+  ],
+  "leftoverClosed": [
+    {
+      "class": "(code)",
+      "countDelta": 1687,
+      "sizeDelta": 394584
+    },
+    {
+      "class": "(array)",
+      "countDelta": -440,
+      "sizeDelta": 104760
+    },
+    {
+      "class": "(hidden)",
+      "countDelta": 446,
+      "sizeDelta": 72432
+    },
+    {
+      "class": "(object shape)",
+      "countDelta": 10,
+      "sizeDelta": 1312
+    },
+    {
+      "class": "(string)",
+      "countDelta": 8,
+      "sizeDelta": 408
+    },
+    {
+      "class": "FixedCircularBuffer",
+      "countDelta": 2,
+      "sizeDelta": 112
+    },
+    {
+      "class": "(synthetic)",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "(symbol)",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "HTTPParser",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "Float64Array",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "emitInitNative()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "Uint8Array",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "afterInspector()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "beforeInspector()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "internalBinding()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    }
+  ],
+  "growthSecondCycle": [
+    {
+      "class": "(hidden)",
+      "countDelta": -120,
+      "sizeDelta": 7200
+    },
+    {
+      "class": "(native)",
+      "countDelta": 0,
+      "sizeDelta": 13
+    },
+    {
+      "class": "(synthetic)",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "(symbol)",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "HTTPParser",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "Float64Array",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "native_bind()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "Object",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "emitInitNative()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "Uint8Array",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "afterInspector()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "beforeInspector()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "internalBinding()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "processImmediate()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    },
+    {
+      "class": "installConsoleExtensions()",
+      "countDelta": 0,
+      "sizeDelta": 0
+    }
+  ],
+  "survivorsAtoC": {
+    "count": 4312,
+    "top": [
+      {
+        "class": "(code)",
+        "count": 2788
+      },
+      {
+        "class": "(hidden)",
+        "count": 1082
+      },
+      {
+        "class": "(native)",
+        "count": 243
+      },
+      {
+        "class": "Array",
+        "count": 109
+      },
+      {
+        "class": "(object shape)",
+        "count": 30
+      },
+      {
+        "class": "(array)",
+        "count": 17
+      },
+      {
+        "class": "Object",
+        "count": 14
+      },
+      {
+        "class": "(string)",
+        "count": 9
+      },
+      {
+        "class": "(number)",
+        "count": 8
+      },
+      {
+        "class": "(synthetic)",
+        "count": 4
+      },
+      {
+        "class": "ArrayBuffer",
+        "count": 3
+      },
+      {
+        "class": "FixedCircularBuffer",
+        "count": 2
+      },
+      {
+        "class": "Uint8Array",
+        "count": 1
+      },
+      {
+        "class": "Buffer",
+        "count": 1
+      },
+      {
+        "class": "get()",
+        "count": 1
+      }
+    ]
+  },
+  "survivorsCtoD": {
+    "count": 1539,
+    "top": [
+      {
+        "class": "(code)",
+        "count": 941
+      },
+      {
+        "class": "(native)",
+        "count": 242
+      },
+      {
+        "class": "(hidden)",
+        "count": 198
+      },
+      {
+        "class": "Array",
+        "count": 105
+      },
+      {
+        "class": "(object shape)",
+        "count": 18
+      },
+      {
+        "class": "(array)",
+        "count": 12
+      },
+      {
+        "class": "(string)",
+        "count": 8
+      },
+      {
+        "class": "(number)",
+        "count": 4
+      },
+      {
+        "class": "(synthetic)",
+        "count": 4
+      },
+      {
+        "class": "ArrayBuffer",
+        "count": 3
+      },
+      {
+        "class": "Object",
+        "count": 2
+      },
+      {
+        "class": "Uint8Array",
+        "count": 1
+      },
+      {
+        "class": "Buffer",
+        "count": 1
+      }
+    ]
+  }
+}

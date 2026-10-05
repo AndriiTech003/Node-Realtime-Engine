@@ -1,0 +1,71 @@
+{
+  "name": "@ashamrai/realtime-client",
+  "version": "0.1.0",
+  "description": "Browser and Node client for the Pulse realtime protocol: resume, dedupe, presence, offline queue",
+  "license": "MIT",
+  "author": "Andrii Shamrai",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "websocket",
+    "realtime",
+    "presence",
+    "pubsub",
+    "resume"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashamrai/node-realtime-engine.git",
+    "directory": "packages/client"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "pack:check": "pnpm run build && publint && attw --pack . && size-limit && pnpm pack --pack-destination ../../.run"
+  },
+  "dependencies": {
+    "msgpackr": "^1.11.5"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@ashamrai/realtime-protocol": "workspace:*",
+    "@size-limit/preset-small-lib": "^11.2.0",
+    "publint": "^0.3.12",
+    "size-limit": "^11.2.0",
+    "tsup": "^8.5.0"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "20 KB"
+    }
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

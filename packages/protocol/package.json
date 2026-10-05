@@ -1,0 +1,25 @@
+{
+  "name": "@ashamrai/realtime-protocol",
+  "version": "0.1.0",
+  "description": "Pulse Realtime Protocol v1: frame types, codecs, validator, close and error codes",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "msgpackr": "^1.11.5"
+  }
+}

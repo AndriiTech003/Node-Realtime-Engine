@@ -1,0 +1,38 @@
+{
+  "name": "@ashamrai/realtime-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pulse realtime engine: plain node:http + ws + Redis Streams",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "realtime-server": "./dist/main.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/main.js",
+    "dev": "node --watch dist/main.js"
+  },
+  "dependencies": {
+    "@ashamrai/realtime-protocol": "workspace:*",
+    "ioredis": "^5.11.1",
+    "msgpackr": "^1.11.5",
+    "pino": "^10.0.0",
+    "prom-client": "^15.1.3",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "zod": "^4.1.0"
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "at": "2026-10-04T22:59:41.915Z",
+  "grafana": {
+    "version": "13.2.3",
+    "dashboard": "Node Realtime Engine",
+    "folder": "Realtime",
+    "provisioned": true
+  },
+  "prometheusTargets": [
+    {
+      "url": "http://127.0.0.1:4399/metrics",
+      "health": "up"
+    },
+    {
+      "url": "http://127.0.0.1:4303/metrics",
+      "health": "up"
+    },
+    {
+      "url": "http://127.0.0.1:4301/metrics",
+      "health": "up"
+    },
+    {
+      "url": "http://127.0.0.1:4302/metrics",
+      "health": "up"
+    }
+  ],
+  "load": {
+    "scenario": "fanout-big-room",
+    "via": "haproxy",
+    "connections": 600,
+    "seconds": 60
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Connections by node",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "sum by (node, state) (rt_connections)"
+      ],
+      "errors": [],
+      "series": 6,
+      "points": 52,
+      "max": 201,
+      "last": 0
+    },
+    {
+      "id": 2,
+      "title": "Messages out / s by kind",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "sum by (kind) (rate(rt_messages_out_total[30s]))"
+      ],
+      "errors": [],
+      "series": 5,
+      "points": 40,
+      "max": 2999.7200783780545,
+      "last": 0
+    },
+    {
+      "id": 3,
+      "title": "Frames in / s by type",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "sum by (t) (rate(rt_messages_in_total[30s]))"
+      ],
+      "errors": [],
+      "series": 6,
+      "points": 48,
+      "max": 25.823553333333336,
+      "last": 0
+    },
+    {
+      "id": 4,
+      "title": "Fan-out duration p99",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "histogram_quantile(0.99, sum by (le, node) (rate(rt_fanout_duration_seconds_bucket[1m])))"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 18,
+      "max": 0.6599999999999995,
+      "last": 0.08874999999999969
+    },
+    {
+      "id": 5,
+      "title": "Event loop lag p99 (corrected)",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "max by (node) (rt_event_loop_lag_seconds{quantile=\"0.99\"})"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 26,
+      "max": 0.022423935,
+      "last": 0.004344190999999999
+    },
+    {
+      "id": 6,
+      "title": "Event loop utilization",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "rt_event_loop_utilization"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 26,
+      "max": 1,
+      "last": 0.05592385194181174
+    },
+    {
+      "id": 7,
+      "title": "Heap used",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "nodejs_heap_size_used_bytes"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 26,
+      "max": 22613536,
+      "last": 16848960
+    },
+    {
+      "id": 8,
+      "title": "Resident memory",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "process_resident_memory_bytes"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 26,
+      "max": 54214656,
+      "last": 37076992
+    },
+    {
+      "id": 9,
+      "title": "Slow consumers disconnected / min",
+      "ok": true,
+      "nonZero": false,
+      "exprs": [
+        "sum by (node) (increase(rt_slow_consumer_disconnects_total[1m]))"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 23,
+      "max": 0,
+      "last": 0
+    },
+    {
+      "id": 10,
+      "title": "Ephemeral dropped / s",
+      "ok": true,
+      "nonZero": false,
+      "exprs": [
+        "sum by (node) (rate(rt_ephemeral_dropped_total[30s]))"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 23,
+      "max": 0,
+      "last": 0
+    },
+    {
+      "id": 11,
+      "title": "Pending durable messages",
+      "ok": true,
+      "nonZero": false,
+      "exprs": [
+        "sum by (node) (rt_pending_messages)"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 26,
+      "max": 0,
+      "last": 0
+    },
+    {
+      "id": 12,
+      "title": "Redis command p99",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "histogram_quantile(0.99, sum by (le, cmd) (rate(rt_redis_command_seconds_bucket[1m])))"
+      ],
+      "errors": [],
+      "series": 2,
+      "points": 13,
+      "max": 0.4732066794144797,
+      "last": 0.047360629211983626
+    },
+    {
+      "id": 13,
+      "title": "WebSocket upgrades / s",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "sum by (result) (rate(rt_upgrades_total[30s]))"
+      ],
+      "errors": [],
+      "series": 8,
+      "points": 64,
+      "max": 25.87346666666667,
+      "last": 0
+    },
+    {
+      "id": 14,
+      "title": "Messages replayed on resume / s",
+      "ok": true,
+      "nonZero": false,
+      "exprs": [
+        "sum(rate(rt_resume_messages_sum[1m]))"
+      ],
+      "errors": [],
+      "series": 1,
+      "points": 8,
+      "max": 0,
+      "last": 0
+    },
+    {
+      "id": 15,
+      "title": "GC pause p99 by kind",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "histogram_quantile(0.99, sum by (le, kind) (rate(rt_gc_pause_seconds_bucket[1m])))"
+      ],
+      "errors": [],
+      "series": 1,
+      "points": 6,
+      "max": 0.24203754016032938,
+      "last": 0.23747562132275615
+    },
+    {
+      "id": 16,
+      "title": "HAProxy sessions per server",
+      "ok": true,
+      "nonZero": true,
+      "exprs": [
+        "haproxy_server_current_sessions{proxy=\"realtime_nodes\"}"
+      ],
+      "errors": [],
+      "series": 3,
+      "points": 27,
+      "max": 201,
+      "last": 200
+    }
+  ],
+  "failures": []
+}

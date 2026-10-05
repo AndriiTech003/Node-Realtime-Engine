@@ -1,0 +1,23 @@
+{
+  "name": "@ashamrai/realtime-loadgen",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Load generator for the realtime engine built on worker_threads",
+  "bin": {
+    "rt-loadgen": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "@ashamrai/realtime-protocol": "workspace:*",
+    "@ashamrai/realtime-server": "workspace:*",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1"
+  }
+}

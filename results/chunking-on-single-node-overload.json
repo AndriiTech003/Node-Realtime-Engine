@@ -1,0 +1,100 @@
+{
+  "scenario": "fanout-big-room",
+  "label": "chunking-on-single-node",
+  "at": "2026-10-01T09:47:03.634Z",
+  "environment": {
+    "cpus": 8,
+    "cpuModel": "Apple M1",
+    "memoryGb": 8,
+    "node": "v26.7.0",
+    "platform": "darwin"
+  },
+  "options": {
+    "scenario": "fanout-big-room",
+    "label": "chunking-on-single-node",
+    "out": "results",
+    "via": "direct",
+    "nodes": [
+      "http://127.0.0.1:4301"
+    ],
+    "haproxy": "http://127.0.0.1:4300",
+    "workers": 4,
+    "codec": "json",
+    "deflate": false,
+    "jitter": true,
+    "connections": 6000,
+    "rooms": 0,
+    "duration": 45,
+    "warmup": 5,
+    "rate": 20,
+    "payload": 1024,
+    "slowPercent": 0,
+    "cursorHz": 0,
+    "probes": 20,
+    "steps": 3,
+    "subscribe": "user",
+    "killCmd": "node scripts/cluster.mjs kill 2",
+    "restartCmd": "node scripts/cluster.mjs start-node 2",
+    "connectRate": 1000,
+    "backoffBaseMs": 1000,
+    "backoffMaxMs": 30000
+  },
+  "result": {
+    "connections": 6041,
+    "connectSeconds": 5.5,
+    "seconds": 45,
+    "latencyMs": {
+      "big-room": {
+        "count": 3653474,
+        "p50": 9118.41,
+        "p95": 16192.88,
+        "p99": 16847.07,
+        "max": 17016.18,
+        "mean": 9343.9
+      },
+      "probe-rooms": {
+        "count": 4512,
+        "p50": 17.13,
+        "p95": 25.45,
+        "p99": 32.92,
+        "max": 107.26,
+        "mean": 17.71
+      }
+    },
+    "clientMsgsInPerSec": 81222,
+    "clientEphInPerSec": 0,
+    "publishedPerSec": 120.3,
+    "gaps": 0,
+    "duplicates": 0,
+    "resets": 0,
+    "resumedMessages": 0,
+    "reconnects": 0,
+    "closeCodes": {},
+    "publishErrors": 0,
+    "loadgenRssMb": 420,
+    "server": {
+      "nodes": 1,
+      "msgsOutPerSec": 81268,
+      "msgsOutByKindPerSec": {
+        "durable": 81148,
+        "ephemeral": 0,
+        "presence": 0,
+        "control": 120,
+        "history": 0
+      },
+      "msgsInPerSec": 120,
+      "eventLoopP99MsMax": 11.74,
+      "eluAvg": 1,
+      "cpuPercentAvg": 92.2,
+      "heapMbMax": 88.5,
+      "rssMbMax": 219.9,
+      "fanoutP50Ms": 1000,
+      "fanoutP99Ms": 1000,
+      "slowConsumerDisconnects": 0,
+      "ephemeralDropped": 0,
+      "upgradesOk": 0,
+      "connections": 6041,
+      "resumeMessages": 0
+    }
+  }
+}

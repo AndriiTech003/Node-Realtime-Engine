@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-01T09:21:18.907Z",
+  "node": "v26.7.0",
+  "results": [
+    {
+      "mode": "bare",
+      "connections": 4000,
+      "heapPerConnKb": 2.78,
+      "rssPerConnKb": 6.88,
+      "externalPerConnKb": 0,
+      "connectMs": 438,
+      "idleCpuMsPerSec": 1.94,
+      "holdSeconds": 30
+    },
+    {
+      "mode": "engine",
+      "connections": 4000,
+      "heapPerConnKb": 5.07,
+      "rssPerConnKb": 17.73,
+      "externalPerConnKb": 0.02,
+      "connectMs": 948,
+      "idleCpuMsPerSec": 11.82,
+      "holdSeconds": 30
+    },
+    {
+      "mode": "engine-subscribed",
+      "connections": 4000,
+      "heapPerConnKb": 6.04,
+      "rssPerConnKb": 21.15,
+      "externalPerConnKb": 0.07,
+      "connectMs": 982,
+      "idleCpuMsPerSec": 13.57,
+      "holdSeconds": 30
+    },
+    {
+      "mode": "engine-deflate",
+      "connections": 4000,
+      "heapPerConnKb": 6.38,
+      "rssPerConnKb": 73.24,
+      "externalPerConnKb": 21.35,
+      "connectMs": 1177,
+      "idleCpuMsPerSec": 11.86,
+      "holdSeconds": 30
+    },
+    {
+      "mode": "engine-per-connection-timers",
+      "connections": 4000,
+      "heapPerConnKb": 5.53,
+      "rssPerConnKb": 17.82,
+      "externalPerConnKb": 0.02,
+      "connectMs": 888,
+      "idleCpuMsPerSec": 14.71,
+      "holdSeconds": 30
+    }
+  ]
+}

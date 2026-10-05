@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+.run
+test-results
+playwright-report
+*.tsbuildinfo
+.env
+results/raw
+*.cpuprofile
+*.heapsnapshot

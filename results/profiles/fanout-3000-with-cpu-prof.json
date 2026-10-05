@@ -1,0 +1,95 @@
+{
+  "scenario": "fanout-big-room",
+  "label": "cpu-prof-fanout",
+  "at": "2026-10-04T22:43:00.873Z",
+  "environment": {
+    "cpus": 8,
+    "cpuModel": "Apple M1",
+    "memoryGb": 8,
+    "node": "v26.7.0",
+    "platform": "darwin"
+  },
+  "options": {
+    "scenario": "fanout-big-room",
+    "label": "cpu-prof-fanout",
+    "out": ".run/prof-results",
+    "via": "direct",
+    "nodes": [
+      "http://127.0.0.1:4301",
+      "http://127.0.0.1:4302",
+      "http://127.0.0.1:4303"
+    ],
+    "haproxy": "http://127.0.0.1:4300",
+    "workers": 4,
+    "codec": "json",
+    "deflate": false,
+    "jitter": true,
+    "connections": 3000,
+    "rooms": 0,
+    "duration": 40,
+    "warmup": 5,
+    "rate": 5,
+    "payload": 0,
+    "slowPercent": 0,
+    "cursorHz": 0,
+    "probes": 0,
+    "steps": 3,
+    "subscribe": "user",
+    "killCmd": "node scripts/cluster.mjs kill 2",
+    "restartCmd": "node scripts/cluster.mjs start-node 2",
+    "connectRate": 1000,
+    "ticketConcurrency": 128,
+    "backoffBaseMs": 1000,
+    "backoffMaxMs": 30000
+  },
+  "result": {
+    "connections": 3001,
+    "connectSeconds": 3,
+    "seconds": 40,
+    "latencyMs": {
+      "big-room": {
+        "count": 603000,
+        "p50": 12.23,
+        "p95": 24.95,
+        "p99": 28.1,
+        "max": 32.03,
+        "mean": 12.9
+      }
+    },
+    "clientMsgsInPerSec": 15061,
+    "clientEphInPerSec": 0,
+    "publishedPerSec": 5,
+    "gaps": 0,
+    "duplicates": 0,
+    "resets": 0,
+    "resumedMessages": 0,
+    "reconnects": 0,
+    "closeCodes": {},
+    "publishErrors": 0,
+    "loadgenRssMb": 200,
+    "server": {
+      "nodes": 3,
+      "msgsOutPerSec": 14991,
+      "msgsOutByKindPerSec": {
+        "durable": 14986,
+        "ephemeral": 0,
+        "presence": 0,
+        "control": 5,
+        "history": 0
+      },
+      "msgsInPerSec": 5,
+      "eventLoopP99MsMax": 19.49,
+      "eluAvg": 0.612,
+      "cpuPercentAvg": 7.8,
+      "heapMbMax": 50.3,
+      "rssMbMax": 153.9,
+      "fanoutP50Ms": 9.671,
+      "fanoutP99Ms": 24.893,
+      "slowConsumerDisconnects": 0,
+      "ephemeralDropped": 0,
+      "upgradesOk": 0,
+      "connections": 3001,
+      "resumeMessages": 0
+    }
+  }
+}
